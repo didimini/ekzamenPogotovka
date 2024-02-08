@@ -23,6 +23,6 @@
 
         <Button Content="Очистить" HorizontalAlignment="Left" Margin="630,300,0,0" VerticalAlignment="Top" Width="100" Height="25" Background="White" BorderBrush="#FF707070" Foreground="#FF707070" Click="Button_Click"/>
 
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="630,340,0,0" VerticalAlignment="Top" Width="100" Height="25" Foreground="Red" Background="White" BorderBrush="Red"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="630,340,0,0" VerticalAlignment="Top" Width="100" Height="25" Foreground="Red" Background="White" BorderBrush="Red"/> 
     </Grid>
 </Window>
