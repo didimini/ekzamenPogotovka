@@ -23,18 +23,31 @@ namespace экзаменПодготовка
     {
         string tarifName;
         double resultMain;
+        public ComboBox CB1 { get; set; }
+        //public ComboBoxItem itemToSelect { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        // метод провеки является ли текст пустым или состоит только из пробелов
+        public bool IsTextBoxEmpty(string text)
+        {
+            if (calculationTB.Text == null || calculationTB.Text == "")
+            {
+                return false;
+            }
+            return true;
         }
 
         private void calculationBtn_Click(object sender, RoutedEventArgs e)
         {
             double time;
 
-            if (calculationTB.Text == null || calculationTB.Text == "")
+            if (IsTextBoxEmpty(calculationTB.Text))
             {
-                MessageBox.Show("Пожжалуйста введите минуты", "Ошибка");
+                MessageBox.Show("Пожалуйста, введите минуты", "Ошибка");
             }
             else
             {
@@ -77,20 +90,34 @@ namespace экзаменПодготовка
             }
         }
 
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        public bool ComboBoxProverka()
+        {
+            // Проверяем, выбран ли элемент в ComboBox
+            return CB.SelectedItem != null;
+        }
+
+        public bool IsComboBoxItemSelected(ComboBox comboBox, string itemText)
+        {
+            if (comboBox.SelectedItem != null)
+            {
+                ComboBoxItem selectedComboBoxItem = (ComboBoxItem)comboBox.SelectedItem;
+                return selectedComboBoxItem.Content.ToString() == itemText;
+            }
+            return false;
+        }
+
+
+
+        public bool IsInputValid(string input)
         {
             // регулярное выражение для проверки ввода только чисел
             Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+            return !regex.IsMatch(input);
         }
 
-        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            // запрет вставки текста с помощью Ctrl+V
-            if (e.Key == Key.V && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
-            {
-                e.Handled = true;
-            }
+            e.Handled = !IsInputValid(e.Text);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -142,4 +169,5 @@ namespace экзаменПодготовка
             MessageBox.Show("Операция успешно выполнена. Чек сохранен.");
         }
     }
+
 }

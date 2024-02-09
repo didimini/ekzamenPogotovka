@@ -10,7 +10,7 @@
         <Label Content="Введите время разговоров за месяц" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top"/>
         <Button x:Name="calculationBtn" Content="Рассчитать" HorizontalAlignment="Left" Margin="310,110,0,0" VerticalAlignment="Top" Width="232" Height="25" Click="calculationBtn_Click" Foreground="#FF009C4F" BorderBrush="#FF009C4F" Background="White"/>
 
-        <TextBox x:Name="calculationTB" HorizontalAlignment="Left" Height="23" Margin="310,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+        <TextBox x:Name="calculationTB" HorizontalAlignment="Left" Height="23" Margin="310,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" PreviewTextInput="TextBox_PreviewTextInput"/>
 
         <RadioButton x:Name="tarifOne" Content="Тариф 1" HorizontalAlignment="Left" Margin="590,85,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <RadioButton x:Name="tarifTwo" Content="Тариф 2" HorizontalAlignment="Left" Margin="590,110,0,0" VerticalAlignment="Top"/>
@@ -23,6 +23,11 @@
 
         <Button Content="Очистить" HorizontalAlignment="Left" Margin="630,300,0,0" VerticalAlignment="Top" Width="100" Height="25" Background="White" BorderBrush="#FF707070" Foreground="#FF707070" Click="Button_Click"/>
 
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="630,340,0,0" VerticalAlignment="Top" Width="100" Height="25" Foreground="Red" Background="White" BorderBrush="Red" Click="Button_Click_1"/> 
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="630,340,0,0" VerticalAlignment="Top" Width="100" Height="25" Foreground="Red" Background="White" BorderBrush="Red" Click="Button_Click_1"/>
+        <ComboBox x:Name="CB" HorizontalAlignment="Left" Margin="310,187,0,0" VerticalAlignment="Top" Width="232">
+            <ComboBoxItem>Значение 1</ComboBoxItem>
+            <ComboBoxItem>Значение 2</ComboBoxItem>
+            <ComboBoxItem>Значение 3</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
